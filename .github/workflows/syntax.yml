@@ -19,14 +19,17 @@ jobs:
           then 
             exit 1
         fi
+      - run: |
         if [ "$(./suma 0 5)" != "5" ]
           then 
             exit 1
         fi
+      - run: |
         if [ "$(./suma 4 2)" != "6" ]
           then 
             exit 1
         fi
+      - run: |
         if [ "$(./suma -6 -21)" != "-27" ]
           then 
             exit 1
