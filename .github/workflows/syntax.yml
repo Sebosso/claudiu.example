@@ -9,7 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: echo "Boraciu Claudiu"
-      - run: gcc -o suma
+      - run: gcc -o suma src/suma.c
       - run: ./suma 18 76
       - run: ./suma 0 5
       - run: ./suma 4 -2
