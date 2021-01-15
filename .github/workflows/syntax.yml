@@ -1,0 +1,36 @@
+name: syntax
+on: push
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        compiler: [gcc]
+    steps:
+      - uses: actions/checkout@v2
+      - run: echo "Boraciu Claudiu"
+      - run: gcc -o suma
+      - run: ./suma 18 76
+      - run: ./suma 0 5
+      - run: ./suma 4 -2
+      - run: ./suma -6 -21
+      - run: |
+        if [ "$(./suma 18 76)" != "94" ]
+          then 
+            exit 1
+        fi
+        
+        if [ "$(./suma 0 5)" != "5" ]
+          then 
+            exit 1
+        fi
+        
+        if [ "$(./suma 4 2)" != "6" ]
+          then 
+            exit 1
+        fi
+        
+        if [ "$(./suma -6 -21)" != "-27" ]
+          then 
+            exit 1
+        fi
